@@ -1,4 +1,5 @@
 import { Component } from "react";
+import { Link } from "react-router-dom";
 
 
 class Register extends Component{
@@ -18,7 +19,7 @@ class Register extends Component{
         //console.log(respons)
         //console.log(result)
 
-        if(respons.status === 201){ window.location.href = '/login' ; console.log("Registred") }
+        if(respons.status === 201){ window.location.href = '/login' ; alert("Registration successfull") }
         else{ alert("ERROR") }
     }
 
@@ -44,6 +45,9 @@ class Register extends Component{
                     <button type="submit">REGISTER</button>
                 
                 </form>
+
+                <Link to={'/'}><button>BACK TO HOME</button></Link>
+            
             </>
         )
     }
