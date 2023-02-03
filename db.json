@@ -1,0 +1,19 @@
+{
+  "profile": [
+    {
+      "username": "aaaa",
+      "password": "aaaa",
+      "id": 1
+    },
+    {
+      "username": "bbb",
+      "password": "bbb",
+      "id": 2
+    },
+    {
+      "username": "adm",
+      "password": "adm",
+      "id": 3
+    }
+  ]
+}
