@@ -27,7 +27,7 @@ class Login extends Component{
                     if(res[0].password === password){
                         alert("SUCCESS")
                         window.location.href= "/myaccount"
-                        //session local storage (memorize username&password in session)
+                        //session / local storage (memorize username&password in session)
                     } else { 
                         alert("Password wrong")
                     }
