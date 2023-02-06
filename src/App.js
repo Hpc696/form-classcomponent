@@ -5,9 +5,7 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 import MyProfile from "./components/MyProfile";
 class App extends Component{
-  constructor(props){
-    super(props)
-  }
+  
   render(){
     return (
       <BrowserRouter>

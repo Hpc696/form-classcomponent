@@ -2,11 +2,13 @@ import { Component } from "react";
 
 class Contacts extends Component{
     state = {
-        contatt:[]
+        contatt:[],
+        check:false
     }
 
     showB = (show) => { show.preventDefault()
 
+        this.setState({ check: true })
 
         fetch("http://localhost:3001/contacts").then((req) => { 
                 return req.json();
@@ -23,8 +25,8 @@ class Contacts extends Component{
     render(){
         return(
             <>
-                <button onClick={this.showB}>Mostra Rubrica</button>
-                <table>
+                <button onClick={this.showB}>{this.state.check ? "Nascondi" : "Mostra "} Rubrica</button>
+                { this.state.check ? <table>
                     <thead>
                         <th>Nome</th>
                         <th>Cognome</th>
@@ -33,7 +35,7 @@ class Contacts extends Component{
                     <tbody>
                     { //console.log(this.state.contatt)
                      this.state.contatt.map( c => ( 
-                        <tr>
+                        <tr key={c.telefono}>
                          <td>{c.nome}</td>
                          <td>{c.cognome}</td>
                          <td>{c.telefono}</td>
@@ -44,6 +46,7 @@ class Contacts extends Component{
                         
                     </tbody>
                 </table>
+                : <></>}
             </>
         )
     }
