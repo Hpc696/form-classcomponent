@@ -28,6 +28,8 @@ class Login extends Component{
                         alert("SUCCESS")
                         window.location.href= "/myaccount"
                         //session local storage (memorize username&password in session)
+                        //show something of one of the account (myacc) on db
+                        
                     } else { 
                         alert("Password wrong")
                     }

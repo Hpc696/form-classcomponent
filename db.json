@@ -13,7 +13,25 @@
     {
       "username": "adm",
       "password": "adm",
-      "id": 3
+      "id": 3 
     }
-  ]
+  ],
+  "contacts":[
+    {
+      "nome": "Matteo",
+      "cognome":"Gnz",
+      "telefono": 3333333333
+    },
+    {
+      "nome": "Marco",
+      "cognome":"Gtz",
+      "telefono": 3332222222
+    },
+    {
+      "nome": "Mattia",
+      "cognome":"Gzt",
+      "telefono": 3331111111
+    }
+]
+
 }
