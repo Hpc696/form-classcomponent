@@ -1,6 +1,7 @@
 import { Component } from "react";
 
 class Contacts extends Component{
+
     state = {
         contatt:[],
         check:false
@@ -8,21 +9,25 @@ class Contacts extends Component{
 
     showB = (show) => { show.preventDefault()
 
-        this.setState({ check: true })
+        this.setState( prevState => ({ check: !prevState.check })   )
 
-        fetch("http://localhost:3001/contacts").then((req) => { 
-                return req.json();
+        if (!this.state.check){
+
+            fetch("http://localhost:3001/contacts").then((req) => { 
+                    return req.json();
+                    
+                }).then((res) => {
+
+                    //console.log(res)
+
+                    this.setState({ contatt: res })
                 
-            }).then((res) => {
-
-                console.log(res)
-
-                this.setState({ contatt: res })
-            
-            }).catch((error) => alert(error))
+                }).catch((error) => alert(error))
+        }
     }
-        
+
     render(){
+    
         return(
             <>
                 <button onClick={this.showB}>{this.state.check ? "Nascondi" : "Mostra "} Rubrica</button>
