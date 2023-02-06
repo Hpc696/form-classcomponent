@@ -4,6 +4,8 @@ import Contacts from "./Contacts";
 
 class MyProfile extends Component{
 
+//needs session storage
+
     render(){
         return(
             <>
