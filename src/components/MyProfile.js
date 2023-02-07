@@ -8,13 +8,14 @@ class MyProfile extends Component{
 
     render(){
         return(
-            <>
+            <div class="text-center">
 
                 <h1>My Account</h1>
+                
                 <Contacts></Contacts>
-                <Link to={'/'}><button>LOGOUT</button></Link>
-        
-            </>
+                
+                <Link to={'/'}><button class="btn btn-primary mt-2">LOGOUT</button></Link>
+            </div>
         )
     }
 
