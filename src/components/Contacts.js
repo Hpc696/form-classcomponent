@@ -61,9 +61,12 @@ class Contacts extends Component{
             telefono
         } = this.state
         return(
-            <div class='container'>
+            <div class="container text-center">
                 <button class="btn btn-primary mt-5" onClick={this.showB}>{this.state.check ? "Nascondi" : "Mostra "} Rubrica</button>
-                { this.state.check ? <table class='table table-striped mt-2'>
+            
+                
+                { this.state.check ? <div class="container">
+                    <table class='table table-striped mt-4'>
                     <thead>
                         <th scope="col">Nome</th>
                         <th scope="col">Cognome</th>
@@ -83,13 +86,20 @@ class Contacts extends Component{
                         
                     </tbody>
                 </table>
-                : <></>}
-                <form onSubmit={this.addC} class="mt-3">
-                    <input type="text" class="p-2 " value={nome} onChange={a => this.setState( {nome: a.target.value } )} placeholder="Inserisci nuovo nome"></input>
-                    <input type="text" class="p-2 ml-1" value={cognome} onChange={a => this.setState( {cognome: a.target.value } )} placeholder="Inserisci cognome"></input>
-                    <input type="number" class="p-2 ml-1" value={telefono} onChange={a=> this.setState( {telefono: a.target.value } )} placeholder="Inserisci telefono"></input>
-                    <button type="submit" class="btn btn-primary m-2">Aggiungi</button>
-                </form>
+                <div class="container">
+                    <form onSubmit={this.addC} class="mt-3">
+                            <label class="mr-2">Nuovo contatto: </label>
+                            <input type="text" class="p-2 " value={nome} onChange={a => this.setState( {nome: a.target.value } )} placeholder="Inserisci nuovo nome"></input>
+                            <input type="text" class="p-2 ml-1" value={cognome} onChange={a => this.setState( {cognome: a.target.value } )} placeholder="Inserisci cognome"></input>
+                            <input type="number" class="p-2 ml-1" value={telefono} onChange={a=> this.setState( {telefono: a.target.value } )} placeholder="Inserisci telefono"></input>
+                            <button type="submit" class="btn btn-primary m-2">Aggiungi</button>
+                    </form>
+                </div>
+                </div>
+                : <div class="container">
+        
+                </div> }
+                
             </div>
         )
     }
