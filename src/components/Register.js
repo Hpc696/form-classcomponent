@@ -14,8 +14,6 @@ class Register extends Component{
     
         const respons = await fetch("http://localhost:3001/profile", { method: "POST", headers: {"Content-Type":"application/json"}, body: JSON.stringify({username,password}) } )
     
-        const result = await respons.json() 
-
         //console.log(respons)
         //console.log(result)
 
@@ -27,27 +25,30 @@ class Register extends Component{
 
     passwordChange = (psw) => { this.setState({ password: psw.target.value }) }
 
-
     render(){
         
         const {username,password} = this.state
 
         return(
             <>
-                <h1>REGISTER</h1>
+                <h1>Registration</h1>
 
-                <form onSubmit={this.regSubmit}>
-                
-                    <input type="text" value={username} onChange={this.usernameChange} placeholder="Inserisci Username"></input>
-                
-                    <input type="password" value={password} onChange={this.passwordChange} placeholder="Inserisci password"></input>
-                
-                    <button type="submit">REGISTER</button>
-                
-                </form>
+                <div class="container text-center">
 
-                <Link to={'/'}><button>BACK TO HOME</button></Link>
-            
+                    <form onSubmit={this.regSubmit}>
+                    
+                        <input type="text" value={username} onChange={this.usernameChange} placeholder="Inserisci Username" class="p-2 border border-primary rounded"></input>
+                    
+                        <input type="password" value={password} onChange={this.passwordChange} placeholder="Inserisci password" class="p-2 border border-primary rounded ml-2"></input>
+                    
+                        <button type="submit" class="btn btn-primary ml-4 mb-1">REGISTER</button>
+                    
+                    </form>
+                </div>
+
+                <div class="container text-center">
+                    <Link to={'/'}><button  class="btn btn-primary mt-4">BACK TO HOME</button></Link>
+                </div>
             </>
         )
     }

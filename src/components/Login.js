@@ -63,20 +63,24 @@ class Login extends Component{
 
         return(
             <>
-                <h1>LOGIN</h1>
+                <h1>Login</h1>
 
-                <form onSubmit={this.logSubmit}>
-                
-                    <input type="text" value={username} onChange={this.usernameChange} placeholder="Inserisci Username"></input>
-                
-                    <input type="password" value={password} onChange={this.passwordChange} placeholder="Inserisci password"></input>
-                
-                    <button type="submit">LOGIN</button>
-                
-                </form>
+                <div class="container text-center">
 
-                <Link to={'/'}><button>BACK TO HOME</button></Link>
+                    <form onSubmit={this.logSubmit}>
+                    
+                        <input type="text" value={username} onChange={this.usernameChange} placeholder="Inserisci Username" class="p-2 border border-primary rounded"></input>
+                    
+                        <input type="password" value={password} onChange={this.passwordChange} placeholder="Inserisci password" class="p-2 border border-primary rounded ml-2"></input>
+                    
+                        <button type="submit" class="btn btn-primary ml-4 mb-1">LOGIN</button>
+                    
+                    </form>
 
+                </div>
+                <div class="container text-center">
+                    <Link to={'/'}><button class="btn btn-primary mt-4">BACK TO HOME</button></Link>
+                </div>
             </>
         )
     }

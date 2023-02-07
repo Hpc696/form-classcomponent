@@ -3,14 +3,14 @@ import { Link } from "react-router-dom";
 import Contacts from "./Contacts";
 
 class MyProfile extends Component{
-
+    
 //needs session storage
 
     render(){
         return(
-            <div>
+            <div> 
                 <div class="d-flex justify-content-around">              
-                    <h1 class="">My Account</h1>
+                    <h1 class="">My Account</h1> {/*insert 'welcome username...' */}
                     <Link to={'/'} class=""><button class="btn btn-primary mt-4">LOGOUT</button></Link>
                 </div>
                 <Contacts></Contacts>
