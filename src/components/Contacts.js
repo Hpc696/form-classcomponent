@@ -67,11 +67,22 @@ class Contacts extends Component{
     
     }
 
+    // removeR = async (remove) => { remove.preventDefault()
+    
+    //     const{ id } = this.state
+
+    // await fetch("http://localhost:3001/contacts/"+id , { method: "DELETE", headers: {"Content-Type":"application/json"}, body: JSON.stringify({ id })})
+    //     .then(() => console.log(this.state.contatt) , this.setState( { contatt: ["", this.state.contatt[1] , this.state.contatt[2]  ]}))
+    //     .catch(err => console.error(err))
+    // }
+
+
     render(){
         const {
             nome,
             cognome,
-            telefono
+            telefono,
+    
         } = this.state
         return(
             <div class="container text-center">
@@ -89,11 +100,12 @@ class Contacts extends Component{
                     </thead>
                     <tbody>
                     { //console.log(this.state.contatt)
-                        this.state.contatt.map( c => ( 
-                            <tr key={c.id}>
+                        this.state.contatt.map( (c , index) => ( 
+                            <tr key={index}>
                                 <td>{c.nome}</td>
                                 <td>{c.cognome}</td>
                                 <td>{c.telefono}</td>
+                                <td><button onClick={index =>this.removeR(index)} class="btn btn-danger">Elimina</button></td>
                             </tr>
                         ))
                     }
