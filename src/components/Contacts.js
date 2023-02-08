@@ -75,6 +75,10 @@ class Contacts extends Component{
     //     .then(() => console.log(this.state.contatt) , this.setState( { contatt: ["", this.state.contatt[1] , this.state.contatt[2]  ]}))
     //     .catch(err => console.error(err))
     // }
+    removeR = (index, r) =>  {
+        r.target.parentNode.parentNode.parentNode.deleteRow(index)
+        //this.setState(this.state.contatt.filter((v, i) => i !== index))
+    }
 
 
     render(){
@@ -105,7 +109,7 @@ class Contacts extends Component{
                                 <td>{c.nome}</td>
                                 <td>{c.cognome}</td>
                                 <td>{c.telefono}</td>
-                                <td><button onClick={index =>this.removeR(index)} class="btn btn-danger">Elimina</button></td>
+                                <td><button onClick={ r => this.removeR(index, r) } class="btn btn-danger">Elimina</button></td>
                             </tr>
                         ))
                     }
