@@ -67,19 +67,14 @@ class Contacts extends Component{
     
     }
 
-    // removeR = async (remove) => { remove.preventDefault()
-    
-    //     const{ id } = this.state
-
-    // await fetch("http://localhost:3001/contacts/"+id , { method: "DELETE", headers: {"Content-Type":"application/json"}, body: JSON.stringify({ id })})
-    //     .then(() => console.log(this.state.contatt) , this.setState( { contatt: ["", this.state.contatt[1] , this.state.contatt[2]  ]}))
-    //     .catch(err => console.error(err))
-    // }
-    removeR = (index, r) =>  {
-        r.target.parentNode.parentNode.parentNode.deleteRow(index)
-        //this.setState(this.state.contatt.filter((v, i) => i !== index))
+    removeR = async (index, r) =>  {
+        //r.target.parentNode.parentNode.parentNode.deleteRow(index) -> error in DOM manipluation
+        await fetch("http://localhost:3001/contacts/"+index, {method: "DELETE", headers: {"Content-Type":"application/json"}, body:JSON.stringify()})
+        .then(()=> { const contattCopy = this.state.contatt.filter((v, i) => i !== index);
+        this.setState({contatt: contattCopy})
+        //console.log(this.state.contatt)
+    })
     }
-
 
     render(){
         const {
